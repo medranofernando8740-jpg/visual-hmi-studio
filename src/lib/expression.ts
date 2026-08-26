@@ -36,7 +36,7 @@ export function evaluateExpression(expr: string, scope: VarScope): unknown {
       ) as (...args: (number | boolean | string)[]) => unknown;
       cache.set(key, fn);
     }
-    return fn(...names.map((n) => scope[n]));
+    return fn(...names.map((n) => scope[n] ?? 0));
   } catch {
     return undefined;
   }
