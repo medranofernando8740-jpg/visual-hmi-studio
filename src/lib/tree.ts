@@ -77,9 +77,7 @@ export function absolutePosition(elements: HmiElement[], id: string): { x: numbe
 }
 
 export function cloneWithNewIds(el: HmiElement): HmiElement {
-  return {
-    ...el,
-    id: uid(el.kind),
-    children: el.children?.map(cloneWithNewIds),
-  };
+  const copy: HmiElement = { ...el, id: uid(el.kind) };
+  if (el.children) copy.children = el.children.map(cloneWithNewIds);
+  return copy;
 }
