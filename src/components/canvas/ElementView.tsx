@@ -59,8 +59,8 @@ export function ElementView({ el, scope, live, selectedIds, onSelect, interactiv
           scope={scope}
           live={live}
           selectedIds={selectedIds}
-          onSelect={onSelect}
           interactive={interactive}
+          {...(onSelect ? { onSelect } : {})}
         />
       </div>
     </div>
