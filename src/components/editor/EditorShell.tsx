@@ -65,14 +65,14 @@ export function EditorShell() {
     <div className="flex h-screen w-full flex-col overflow-hidden bg-background text-foreground">
       <TopBar />
 
-      <ResizablePanelGroup direction="horizontal" className="flex-1">
-        <ResizablePanel defaultSize={17} minSize={12} className="flex flex-col">
-          <ResizablePanelGroup direction="vertical">
-            <ResizablePanel defaultSize={38} minSize={15} className="panel">
+      <ResizablePanelGroup orientation="horizontal" className="flex-1">
+        <ResizablePanel defaultSize="17" minSize="12" className="flex flex-col">
+          <ResizablePanelGroup orientation="vertical">
+            <ResizablePanel defaultSize="38" minSize="15" className="panel">
               <ProjectExplorer />
             </ResizablePanel>
             <ResizableHandle />
-            <ResizablePanel defaultSize={62} minSize={20} className="panel">
+            <ResizablePanel defaultSize="62" minSize="20" className="panel">
               <WidgetLibrary />
             </ResizablePanel>
           </ResizablePanelGroup>
@@ -80,13 +80,13 @@ export function EditorShell() {
 
         <ResizableHandle />
 
-        <ResizablePanel defaultSize={58} minSize={30}>
-          <ResizablePanelGroup direction="vertical">
-            <ResizablePanel defaultSize={68} minSize={25}>
+        <ResizablePanel defaultSize="58" minSize="30">
+          <ResizablePanelGroup orientation="vertical">
+            <ResizablePanel defaultSize="68" minSize="25">
               <Canvas />
             </ResizablePanel>
             <ResizableHandle />
-            <ResizablePanel defaultSize={32} minSize={12} className="panel flex flex-col">
+            <ResizablePanel defaultSize="32" minSize="12" className="panel flex flex-col">
               <div className="flex shrink-0 items-center gap-0.5 border-b border-border bg-panel-header px-1.5 py-1">
                 {TABS.map((t) => (
                   <button
@@ -114,13 +114,13 @@ export function EditorShell() {
 
         <ResizableHandle />
 
-        <ResizablePanel defaultSize={25} minSize={16} className="flex flex-col">
-          <ResizablePanelGroup direction="vertical">
-            <ResizablePanel defaultSize={35} minSize={15} className="panel">
+        <ResizablePanel defaultSize="25" minSize="16" className="flex flex-col">
+          <ResizablePanelGroup orientation="vertical">
+            <ResizablePanel defaultSize="35" minSize="15" className="panel">
               <LayersPanel />
             </ResizablePanel>
             <ResizableHandle />
-            <ResizablePanel defaultSize={65} minSize={25} className="panel">
+            <ResizablePanel defaultSize="65" minSize="25" className="panel">
               <Inspector />
             </ResizablePanel>
           </ResizablePanelGroup>
