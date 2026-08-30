@@ -40,7 +40,7 @@ export function ProjectExplorer() {
         <Group
           label={`Pantallas (${project.screens.length})`}
           icon={<Monitor className="h-3 w-3" />}
-          open={open.screens!}
+          open={open['screens']!}
           onToggle={() => toggle("screens")}
           action={
             <button className="tool-btn h-4 px-0.5" onClick={addScreen} title="Nueva pantalla">
@@ -77,7 +77,7 @@ export function ProjectExplorer() {
         <Group
           label={`Variables (${project.variables.length})`}
           icon={<Variable className="h-3 w-3" />}
-          open={open.variables!}
+          open={open['variables']!}
           onToggle={() => toggle("variables")}
         >
           {project.variables.map((v) => (
@@ -91,7 +91,7 @@ export function ProjectExplorer() {
         <Group
           label={`Widgets (${project.widgets.length})`}
           icon={<Boxes className="h-3 w-3" />}
-          open={open.widgets!}
+          open={open['widgets']!}
           onToggle={() => toggle("widgets")}
         >
           {project.widgets.length === 0 && (
@@ -110,7 +110,7 @@ export function ProjectExplorer() {
         <Group
           label={`Conexiones (${project.connections.length})`}
           icon={<Radio className="h-3 w-3" />}
-          open={open.connections!}
+          open={open['connections']!}
           onToggle={() => toggle("connections")}
         >
           {project.connections.map((c) => (
@@ -129,7 +129,7 @@ export function ProjectExplorer() {
         <Group
           label={`Assets (${project.assets.length})`}
           icon={<FileImage className="h-3 w-3" />}
-          open={open.assets!}
+          open={open['assets']!}
           onToggle={() => toggle("assets")}
         >
           {project.assets.map((a) => (
