@@ -1,8 +1,15 @@
 import type { HmiElement } from "@/types/hmi";
 
+let idCounter = 0;
+
+/**
+ * Deterministic sequential ids so server-rendered and hydrated markup match.
+ */
 export function uid(prefix = "el") {
-  return `${prefix}_${Math.random().toString(36).slice(2, 9)}`;
+  idCounter += 1;
+  return `${prefix}_${idCounter.toString(36)}`;
 }
+
 
 export function findElement(elements: HmiElement[], id: string): HmiElement | undefined {
   for (const el of elements) {
