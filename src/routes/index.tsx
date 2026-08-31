@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
 
 function EditorPage() {
   return (
-    <main className="dark">
+    <main>
       <ClientOnly
         fallback={
           <div className="grid h-screen place-items-center bg-background font-mono text-xs text-muted-foreground">
