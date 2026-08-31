@@ -1,5 +1,5 @@
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { ClientOnly } from "@tanstack/react-router";
 import { EditorShell } from "@/components/editor/EditorShell";
 
 export const Route = createFileRoute("/")({
@@ -25,17 +25,20 @@ export const Route = createFileRoute("/")({
 });
 
 function EditorPage() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) {
+    return (
+      <div className="grid h-screen place-items-center bg-background font-mono text-xs text-muted-foreground">
+        Cargando entorno HMI\u2026
+      </div>
+    );
+  }
+
   return (
     <main>
-      <ClientOnly
-        fallback={
-          <div className="grid h-screen place-items-center bg-background font-mono text-xs text-muted-foreground">
-            Cargando entorno HMI…
-          </div>
-        }
-      >
-        <EditorShell />
-      </ClientOnly>
+      <EditorShell />
     </main>
   );
 }
